@@ -14,11 +14,13 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13"]
+    env:
+      UV_PYTHON: ${{ matrix.python-version }}   # every uv command must use the matrix version, not .python-version
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv python install ${{ matrix.python-version }}
-      - run: uv sync --all-packages --python ${{ matrix.python-version }}
+      - run: uv sync --all-packages
       - name: Lint and format (Ruff)
         run: uv run ruff check . && uv run ruff format --check .
       - name: Types (mypy)
