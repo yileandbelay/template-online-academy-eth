@@ -1,0 +1,42 @@
+# Mek Academy on the template. A product pack (docs/guides/product-pack.md): name, domains, languages, blocks, settings.
+# It lives in this repository while the template is developed locally; it moves to its own repository later (ADR-015).
+product: Mek Academy
+segment: elearning
+type: online_academy
+tier: dedicated_hosted
+engine: none
+
+domain:
+  main: www.mek-academy.com
+  redirect_from: [mek-academy.com, learn.mek-academy.com]
+
+locale:
+  country: ET
+  languages: [en, am]
+  default_language: en
+  calendar_defaults: {am: ethiopian, en: gregorian}
+  currency: ETB
+
+blocks:
+  - business.parties@0
+  - business.lms@0
+  - business.exams@0
+  - business.feedback@0
+  - business.contact@0
+  - integrations.payments@0
+  - integrations.notifications@0
+  - integrations.video@0
+  - automation.reports@0
+  - automation.imports@0
+  - compliance.tax@0
+
+settings:
+  lms: {discussion: true, announcements: true, certificates: true, lessons_locked_by_default: true, free_preview_allowed: true}
+  payments: {adapters: [manual, chapa], partial_payments: true, manual_instructions_editable: true}
+  video: {provider: bunny, allowed_domains: [www.mek-academy.com]}
+  admin: {language: en}
+
+theme: theme/
+pages: pages/
+content: content/
+extensions: []

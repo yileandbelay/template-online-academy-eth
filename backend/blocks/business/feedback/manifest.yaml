@@ -1,0 +1,26 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: business.feedback
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Ratings and written feedback on any subject by reference, with moderation and summaries.
+provides:
+- RatingQueryV1
+requires:
+- ReviewEligibilityQueryV1
+- PartyQueryV1
+- AuditV1
+events_emitted:
+- review.submitted@1
+- review.hidden@1
+events_consumed:
+- account.erased@1
+permissions:
+- feedback.review.submit
+- feedback.review.moderate
+settings_model: hulu_feedback.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

@@ -1,0 +1,26 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: business.exams
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Question banks, quizzes and exams with pass mark, attempt limits, server-enforced timer, explanations and results.
+provides:
+- ExamQueryV1
+requires:
+- AccessQueryV1
+- AuditV1
+events_emitted:
+- exam.attempted@1
+- exam.passed@1
+events_consumed:
+- account.erased@1
+permissions:
+- exams.exam.edit
+- exams.attempt.view
+- exams.result.export
+settings_model: hulu_exams.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

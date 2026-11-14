@@ -1,0 +1,23 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: integrations.notifications
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Sends messages to people by email with templates per language; ready for SMS and Telegram adapters.
+provides:
+- NotifierV1
+requires:
+- JobsV1
+- LocalizationV1
+- AuditV1
+events_emitted: []
+events_consumed: []
+permissions:
+- notifications.template.edit
+- notifications.log.view
+settings_model: hulu_notifications.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

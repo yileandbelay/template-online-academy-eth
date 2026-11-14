@@ -11,9 +11,10 @@ Status: **M0, foundations and spikes.** Developed locally; nothing is deployed u
 |---|---|
 | `backend/kernel/` | `hulu_kernel`: platform services (M0: manifests, registry, app factory) |
 | `backend/contracts/` | `hulu_contracts`: shared types, event envelope, ports and queries |
-| `backend/blocks/` | One folder per block, made with `new-block`. None yet |
+| `backend/blocks/` | One folder per block, made with `new-block`: eleven planned blocks as proposed skeletons (see the block catalogue) |
 | `tools/new_block/` | The block generator |
 | `templates/` | Product templates, for example `elearning/online_academy.yaml` |
+| `products/` | Product packs: `mek-academy/` (reference) and `kasina/` (second client) |
 | `languages/` | Language packs and glossary (Amharic) |
 | `apps/` | Web shell, admin console, UI library (from M0 week 3 and M5) |
 | `qa/` | Scenarios, test kit and fakes (grows from M1) |
@@ -38,4 +39,5 @@ Blocks own their data and meet only through events, ports, queries and versioned
 extensions, never changes to shared blocks. Every decision gets an ADR. Work goes in small pull requests; each is merged
 only after the owner says "merge".
 
-See `docs/plan/` for the plan and `docs/README.md` for the index.
+Start with [`docs/README.md`](docs/README.md) (index), the [roadmap](docs/roadmap.md) and the
+[architecture overview](docs/architecture/overview.md). The plan is in `docs/plan/`.

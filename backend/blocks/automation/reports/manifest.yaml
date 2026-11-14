@@ -1,0 +1,26 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: automation.reports
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Revenue, enrolment and completion reports with CSV export, built from events; active learners per month.
+provides: []
+requires:
+- PartyQueryV1
+- CatalogQueryV1
+- AuditV1
+events_emitted: []
+events_consumed:
+- payment.confirmed@1
+- enrollment.activated@1
+- course.completed@1
+permissions:
+- reports.revenue.view
+- reports.students.view
+- reports.export.run
+settings_model: hulu_reports.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

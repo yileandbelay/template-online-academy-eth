@@ -1,0 +1,23 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: automation.imports
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: 'CSV imports with a dry run and a row-by-row error report: students, bulk invitations, courses, data migration.'
+provides: []
+requires:
+- PartyPortV1
+- EnrollmentPortV1
+- AuditV1
+events_emitted:
+- import.completed@1
+events_consumed: []
+permissions:
+- imports.job.run
+- imports.job.view
+settings_model: hulu_imports.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

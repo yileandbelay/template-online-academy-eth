@@ -14,17 +14,17 @@ locale:
   currency: ETB
 
 blocks:
-  - business.parties@1        # planned: M2
-  - business.lms@1            # planned: M3
-  - business.exams@1          # planned: M4
-  - business.feedback@1       # planned: M4
-  - business.contact@1        # planned: M2
-  - integrations.payments@1   # planned: M2 (adapters: manual, chapa)
-  - integrations.notifications@1  # planned: M2 (adapter: email)
-  - integrations.video@1      # planned: M3 (adapters: bunny, external)
-  - automation.reports@1      # planned: M4
-  - automation.imports@1      # planned: M4
-  - compliance.tax@1          # planned: M2 (minimal)
+  - business.parties@0   # planned: M2
+  - business.lms@0   # planned: M3
+  - business.exams@0   # planned: M4
+  - business.feedback@0   # planned: M4
+  - business.contact@0   # planned: M2
+  - integrations.payments@0   # planned: M2 (adapters: manual, chapa)
+  - integrations.notifications@0   # planned: M2 (adapter: email)
+  - integrations.video@0   # planned: M3 (adapters: bunny, external)
+  - automation.reports@0   # planned: M4
+  - automation.imports@0   # planned: M4
+  - compliance.tax@0   # planned: M2 (minimal)
 
 settings:
   lms: {discussion: true, announcements: true, certificates: true, lessons_locked_by_default: true, free_preview_allowed: true}
