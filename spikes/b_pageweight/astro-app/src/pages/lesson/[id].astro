@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import CompleteButton from '../../components/CompleteButton.jsx';
+import VideoFacade from '../../components/VideoFacade.jsx';
+import { allLessons, lessonBody } from '../../lib/data.js';
+export const getStaticPaths = () => allLessons.map((l) => ({ params: { id: String(l.id) }, props: { l } }));
+const { l } = Astro.props;
+---
+<Base title={l.title}><article class="prose"><p class="muted">{l.course.title}</p><h1>{l.title}</h1>
+  <VideoFacade src="https://iframe.mediadelivery.net/embed/0/example" client:visible />
+  {lessonBody(6).map((t) => <p>{t}</p>)}
+  <CompleteButton id={l.id} client:visible />
+</article></Base>

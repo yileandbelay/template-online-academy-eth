@@ -1,0 +1,6 @@
+{
+  "name": "spike-b-next",
+  "private": true,
+  "scripts": { "build": "next build", "start": "next start -p 3055" },
+  "dependencies": { "next": "16.4.6", "react": "19.3.1", "react-dom": "19.3.1" }
+}

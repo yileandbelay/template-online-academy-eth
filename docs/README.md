@@ -15,6 +15,7 @@ Start here. Everything is plain Markdown in this repository; pull requests chang
 | [Testing](guides/testing.md) | Test kinds, fakes, scenarios, budgets |
 | [What Mek Academy taught us](mek-lessons.md) | Lessons from the first product, written as rules |
 | [Mek Academy](products/mek-academy.md) · [Kasina](products/kasina.md) | The two products |
+| [M0 spike report](spikes/m0-report.md) | Results of the four spikes and the Gate 0 decisions |
 | [Decisions (ADRs)](adr/README.md) | Why things are the way they are |
 | [Glossary](glossary.md) | Words used in this project |
 | `plan/` | The engineering plan (PDF) |

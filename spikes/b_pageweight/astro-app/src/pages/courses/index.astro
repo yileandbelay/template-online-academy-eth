@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro';
+import CatalogueFilter from '../../components/CatalogueFilter.jsx';
+import { courses } from '../../lib/data.js';
+---
+<Base><h1>Browse courses</h1><CatalogueFilter courses={courses} client:visible /></Base>

@@ -1,0 +1,15 @@
+[databases]
+meksp = host=/tmp/pgspike port=5544 dbname=meksp
+
+[pgbouncer]
+listen_addr = 127.0.0.1
+listen_port = 6544
+auth_type = trust
+auth_file = /tmp/pgspike/userlist.txt
+pool_mode = transaction
+default_pool_size = 1
+min_pool_size = 0
+max_client_conn = 50
+logfile = /tmp/pgspike/pgbouncer.log
+pidfile = /tmp/pgspike/pgbouncer.pid
+unix_socket_dir =

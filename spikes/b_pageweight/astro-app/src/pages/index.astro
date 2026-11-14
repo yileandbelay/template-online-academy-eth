@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { courses } from '../lib/data.js';
+---
+<Base>
+  <section class="hero"><h1>Build skills that move your career forward.</h1>
+    <p class="muted">Practical, professional training you can take anywhere.</p><a class="btn" href="/courses">Browse courses</a></section>
+  <h2>Popular courses</h2>
+  <div class="grid">{courses.slice(0, 6).map((c) => (
+    <article class="card"><span class="badge">{c.level} · {c.hours} h</span><h3><a href={`/courses/${c.slug}`}>{c.title}</a></h3>
+      <p class="muted">{c.summary}</p><p>★ {c.rating} ({c.reviews}) · {c.price ? `ETB ${c.price}` : 'Free'}</p></article>))}</div>
+</Base>

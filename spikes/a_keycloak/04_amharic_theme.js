@@ -1,0 +1,21 @@
+const { chromium } = require('playwright');
+const { admin, pkce, authUrl } = require('./kc');
+(async () => {
+  const cur = (await admin('GET', '/mek')).json;
+  const r = await admin('PUT', '/mek', { ...cur, loginTheme: 'mek' });
+  console.log('set login theme', r.status);
+  const browser = await chromium.launch();
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true });
+  const page = await ctx.newPage();
+  const { challenge } = pkce();
+  await page.goto(authUrl({ ui_locales: 'am', code_challenge: challenge }));
+  const btn = (await page.textContent('#kc-login')).trim();
+  const title = (await page.textContent('#kc-page-title')).trim();
+  await page.screenshot({ path: 'results/e2-amharic-custom-theme-390.png' });
+  console.log(`[${btn === 'ግባ' ? 'PASS' : 'FAIL'}] custom theme with messages_am.properties is picked up (button "${btn}", title "${title}")`);
+  await page.click('a:has-text("ተመዝገብ")'); await page.waitForSelector('#email');
+  await page.screenshot({ path: 'results/e3-amharic-register-390.png', fullPage: true });
+  const labels = await page.$$eval('label', (els) => els.map((e) => e.textContent.trim()));
+  console.log('register form labels in Amharic mode:', labels.join(' | '));
+  await browser.close();
+})();
