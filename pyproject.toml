@@ -1,0 +1,57 @@
+[project]
+name = "online-academy-ethiopia-template"
+version = "0.0.0"
+description = "Workspace root of the Online Academy for Ethiopia template (Hulu platform blocks for online learning)."
+requires-python = ">=3.12"
+dependencies = ["hulu-kernel", "hulu-contracts", "hulu-new-block"]
+
+[tool.uv.workspace]
+members = ["backend/kernel", "backend/contracts", "tools/new_block", "backend/blocks/*/*"]
+
+[tool.uv.sources]
+hulu-kernel = { workspace = true }
+hulu-contracts = { workspace = true }
+hulu-new-block = { workspace = true }
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11", "import-linter>=2.0", "types-PyYAML", "httpx>=0.27"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = ["S101", "RUF012"]  # asserts are fine in tests; pydantic copies mutable defaults
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S"]
+"tools/new_block/new_block/scaffold.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+
+mypy_path = "backend/kernel:backend/contracts:tools/new_block"
+explicit_package_bases = true
+
+[tool.pytest.ini_options]
+testpaths = ["backend/kernel/tests", "backend/contracts/tests", "backend/blocks", "tools/new_block/tests", "qa"]
+filterwarnings = ["ignore:Using `httpx` with `starlette.testclient`:DeprecationWarning"]
+addopts = "-q"
+
+[tool.importlinter]
+root_packages = ["hulu_kernel", "hulu_contracts"]
+include_external_packages = false
+
+[[tool.importlinter.contracts]]
+name = "Kernel depends on no other Hulu package"
+type = "forbidden"
+source_modules = ["hulu_kernel"]
+forbidden_modules = ["hulu_contracts"]
+
+[[tool.importlinter.contracts]]
+name = "Layers: contracts sit above the kernel"
+type = "layers"
+layers = ["hulu_contracts", "hulu_kernel"]

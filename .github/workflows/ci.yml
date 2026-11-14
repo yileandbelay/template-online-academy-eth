@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv python install ${{ matrix.python-version }}
+      - run: uv sync --all-packages --python ${{ matrix.python-version }}
+      - name: Lint and format (Ruff)
+        run: uv run ruff check . && uv run ruff format --check .
+      - name: Types (mypy)
+        run: shopt -s nullglob && uv run mypy backend/kernel/hulu_kernel backend/contracts/hulu_contracts tools/new_block/new_block backend/blocks/*/*/hulu_*
+      - name: Import boundaries between layers
+        run: uv run lint-imports
+      - name: Tests (includes block import boundaries and the block generator)
+        run: uv run pytest
