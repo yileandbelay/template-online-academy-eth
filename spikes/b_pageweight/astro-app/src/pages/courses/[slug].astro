@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import EnrollButton from '../../components/EnrollButton.jsx';
+import { courses } from '../../lib/data.js';
+export const getStaticPaths = () => courses.map((c) => ({ params: { slug: c.slug }, props: { c } }));
+const { c } = Astro.props;
+---
+<Base title={c.title}><article><span class="badge">{c.level} · {c.hours} h</span><h1>{c.title}</h1><p class="muted">{c.summary}</p>
+  <p>★ {c.rating} ({c.reviews} reviews) · {c.price ? `ETB ${c.price}` : 'Free'}</p>
+  <EnrollButton slug={c.slug} price={c.price} client:visible />
+  <h2>Syllabus</h2>
+  <ul class="lessons">{c.lessons.map((l) => (<li><span>{l.preview ? <a href={`/lesson/${l.id}`}>{l.title}</a> : <span class="lock">🔒 {l.title}</span>}</span><span class="muted">{l.minutes} min</span></li>))}</ul>
+</article></Base>

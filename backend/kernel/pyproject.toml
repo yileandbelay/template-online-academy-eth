@@ -3,7 +3,7 @@ name = "mek-kernel"
 version = "0.0.1"
 description = "Platform services every block uses (spec section 5). M0: manifest, registry, app factory."
 requires-python = ">=3.12"
-dependencies = ["pydantic>=2.7", "pyyaml>=6", "fastapi>=0.115"]
+dependencies = ["pydantic>=2.7", "pyyaml>=6", "fastapi>=0.115", "uvicorn>=0.30"]
 
 [project.scripts]
 mek-kernel = "mek_kernel.cli:main"

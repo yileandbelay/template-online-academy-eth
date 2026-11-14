@@ -5,7 +5,7 @@ stream, mostly written by Claude and reviewed by the owner; they are re-estimate
 
 | Milestone | What | Estimate | Status |
 |---|---|---|---|
-| **M0 Foundations and spikes** | Monorepo, CI, generator, ADRs; spikes: Keycloak, page weight, row-level security, local Compose footprint | 10 to 15 d | **In progress.** Week 1 done: skeleton, contracts, registry, generator, CI. Docs and block skeletons in review |
+| **M0 Foundations and spikes** | Monorepo, CI, generator, ADRs; spikes: Keycloak, page weight, row-level security, local Compose footprint | 10 to 15 d | **Spikes done; awaiting Gate 0.** Skeleton, contracts, registry, generator, CI, docs and block skeletons are merged |
 | **M1 Kernel walking skeleton** | Tenancy, identity, authorization, audit, settings, numbering, i18n, calendar, events, jobs, files, registry | 25 to 35 d | Not started |
 | **M2 Shared blocks, wave 1** | Parties, notifications, payments (manual and Chapa), documents, contact, tax | 20 to 30 d | Not started |
 | **M3 Online-learning core** | Courses, lessons, enrolment, access policy, progress, search, video | 30 to 40 d | Not started |
@@ -28,11 +28,12 @@ stream, mostly written by Claude and reviewed by the owner; they are re-estimate
 - [x] ADRs 015 to 021
 - [x] All planned blocks created as proposed skeletons; kernel folders; QA folders; product packs for Mek Academy and Kasina
 - [x] Block catalogue generated from manifests; docs
-- [ ] Spike A: Keycloak footprint, Amharic sign-up, invitations, Mek Academy password migration
-- [ ] Spike B: page weight of catalogue, course and lesson pages (Next.js) on a throttled phone profile
-- [ ] Spike C: PostgreSQL row-level security with `SET LOCAL` through a pooler
-- [ ] Spike D: local Docker Compose footprint (memory) of the full stack
-- [ ] Spike report and Gate 0 recommendation
+- [x] Spike A: Keycloak footprint, Amharic sign-up, invitations, Mek Academy password migration: GO with conditions
+- [x] Spike B: page weight of catalogue, course and lesson pages on a throttled phone profile: owner decision (hybrid recommended)
+- [x] Spike C: PostgreSQL row-level security with `SET LOCAL` through a pooler: GO (12 of 12)
+- [x] Spike D: footprint of the stack, measured natively (Compose kit provided, untested here)
+- [x] Spike report: `spikes/m0-report.md`
+- [ ] Gate 0 decisions from the owner (see the end of the report)
 
 ## Out of scope for the first release
 Telegram delivery, installable offline lessons, Telebirr direct, coupons, subscriptions, cohorts and seat licences,

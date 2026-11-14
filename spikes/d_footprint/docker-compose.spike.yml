@@ -1,0 +1,40 @@
+# UNTESTED in the environment that wrote it (no Docker daemon there). Run it on your machine to measure the real footprint:
+#   docker compose -f spikes/d_footprint/docker-compose.spike.yml up -d --build
+#   bash spikes/d_footprint/measure.sh
+# Pin the image tags you decide to keep. Nothing here is a deployment (ADR-016).
+name: mek-spike
+services:
+  postgres:
+    image: postgres:16
+    environment: { POSTGRES_USER: mek, POSTGRES_PASSWORD: mek-dev-only, POSTGRES_DB: mek }
+    volumes:
+      - ./init-keycloak.sql:/docker-entrypoint-initdb.d/10-keycloak.sql:ro
+      - pgdata:/var/lib/postgresql/data
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U mek"], interval: 5s, retries: 12 }
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.2
+    command: start --http-enabled=true --hostname-strict=false --db=postgres --db-url=jdbc:postgresql://postgres:5432/keycloak --db-username=keycloak --db-password=keycloak-dev-only
+    environment: { KC_BOOTSTRAP_ADMIN_USERNAME: admin, KC_BOOTSTRAP_ADMIN_PASSWORD: admin-spike-only }
+    volumes: ["../a_keycloak/theme-mek:/opt/keycloak/themes/mek:ro"]
+    depends_on: { postgres: { condition: service_healthy } }
+
+  minio:
+    image: quay.io/minio/minio
+    command: server /data --console-address ":9001"
+    environment: { MINIO_ROOT_USER: mek-dev, MINIO_ROOT_PASSWORD: mek-dev-only-secret }
+    volumes: ["miniodata:/data"]
+
+  api:
+    build: { context: ../.., dockerfile: spikes/d_footprint/Dockerfile.api }
+
+  web:
+    build: { context: ../b_pageweight/next-app, dockerfile: ../../d_footprint/Dockerfile.web }
+
+  traefik:
+    image: traefik:v3.3
+    command: ["--providers.file.directory=/etc/traefik/dyn", "--entrypoints.web.address=:8088", "--log.level=ERROR"]
+    ports: ["8088:8088"]
+    volumes: ["./traefik-routes.yml:/etc/traefik/dyn/routes.yml:ro"]
+    depends_on: [api, web, keycloak]
+volumes: { pgdata: {}, miniodata: {} }

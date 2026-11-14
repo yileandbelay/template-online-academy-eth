@@ -1,0 +1,10 @@
+---
+import '../styles/globals.css';
+const { title = 'Spike B: Online Academy' } = Astro.props;
+---
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>{title}</title></head>
+<body>
+<header class="site"><a class="logo" href="/">Mek Academy</a><nav><a href="/courses">Browse courses</a><a href="/am">አማ</a></nav></header>
+<main><slot /></main>
+<footer class="site">Contact · Privacy · Terms · Refunds</footer>
+</body></html>
