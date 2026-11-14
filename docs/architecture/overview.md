@@ -1,6 +1,6 @@
 # Architecture overview
 
-The template is a **modular monolith** on the Hulu platform architecture: one deployable application made of strictly
+The template is a **modular monolith** on the Mek platform architecture: one deployable application made of strictly
 separated blocks. A product is a configuration of blocks.
 
 ## Layers
@@ -14,7 +14,7 @@ Kernel            tenancy · identity · permissions · audit · settings ... (s
 
 Each layer depends only on layers below it. Products contain no shared code. **Blocks meet only through contracts.**
 Dependencies are enforced by `import-linter` (layers) and an AST check (blocks never import each other); see
-`backend/kernel/hulu_kernel/registry/boundaries.py`.
+`backend/kernel/mek_kernel/registry/boundaries.py`.
 
 ## The kernel
 
@@ -55,7 +55,7 @@ other's code.
 Written to an **outbox** table in the same transaction as the business change, so nothing is lost and nothing is sent for a
 change that rolled back. A relay delivers to handlers, which record processed ids in an **inbox** (idempotent). Delivery is
 at least once; order is guaranteed per subject only. Payloads carry ids and amounts, **never personal data**. The envelope
-is CloudEvents 1.0 (`hulu_contracts.events.EventEnvelope`).
+is CloudEvents 1.0 (`mek_contracts.events.EventEnvelope`).
 
 ## Data
 - Each block owns one PostgreSQL schema; only that block's code writes it. Blocks refer to other blocks' records by
@@ -72,7 +72,7 @@ redirect); audit of money, roles, prices, exports and erasure.
 
 ## Products
 A product is a **manifest**: product name, domains, languages, calendar, currency, blocks and settings, plus a theme, pages,
-content and optional extensions. The installer (M6) turns it into a running system; until then `hulu-kernel validate`
+content and optional extensions. The installer (M6) turns it into a running system; until then `mek-kernel validate`
 checks it and `resolve` orders the blocks. See [Product packs](../guides/product-pack.md).
 
 ## Technology

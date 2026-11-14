@@ -14,7 +14,7 @@
 - **HTTP API:** `/api/parties/v1/...`
 
 ## Settings
-See `hulu_parties/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
+See `mek_parties/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
 
 ## Permissions
 Declared in `manifest.yaml`; every route must require one (startup fails otherwise).

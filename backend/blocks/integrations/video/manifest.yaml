@@ -13,7 +13,7 @@ events_consumed: []
 permissions:
 - video.asset.upload
 - video.asset.view
-settings_model: hulu_video.settings:Settings
+settings_model: mek_video.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

@@ -39,7 +39,7 @@ permissions:
 - lms.announcement.edit
 - lms.discussion.moderate
 - lms.certificate.view
-settings_model: hulu_lms.settings:Settings
+settings_model: mek_lms.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

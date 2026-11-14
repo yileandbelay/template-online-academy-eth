@@ -19,4 +19,4 @@ Start here. Everything is plain Markdown in this repository; pull requests chang
 | [Glossary](glossary.md) | Words used in this project |
 | `plan/` | The engineering plan (PDF) |
 
-The Hulu architecture specification is internal and is not copied here. These pages summarise what the template uses of it.
+The Mek architecture specification is internal and is not copied here. These pages summarise what the template uses of it.

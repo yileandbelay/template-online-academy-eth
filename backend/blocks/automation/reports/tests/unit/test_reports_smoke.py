@@ -1,2 +1,2 @@
 def test_package_imports():
-    import hulu_reports  # noqa: F401
+    import mek_reports  # noqa: F401

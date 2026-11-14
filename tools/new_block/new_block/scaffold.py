@@ -6,11 +6,11 @@ name = "{{package}}"
 version = "0.1.0"
 description = "{{id}}: {{Title}} block."
 requires-python = ">=3.12"
-dependencies = ["hulu-kernel", "hulu-contracts"]
+dependencies = ["mek-kernel", "mek-contracts"]
 
 [tool.uv.sources]
-hulu-kernel = { workspace = true }
-hulu-contracts = { workspace = true }
+mek-kernel = { workspace = true }
+mek-contracts = { workspace = true }
 
 [build-system]
 requires = ["hatchling"]
@@ -67,7 +67,7 @@ TODO
 
 from pathlib import Path
 
-from hulu_kernel.registry import BlockManifest, load_block_manifest
+from mek_kernel.registry import BlockManifest, load_block_manifest
 
 MANIFEST_PATH = Path(__file__).resolve().parent.parent / "manifest.yaml"
 
@@ -77,7 +77,7 @@ def manifest() -> BlockManifest:
 ''',
     "{{package}}/settings.py": '''"""Settings model (spec 6.1): bounded, validated, safe defaults. Secrets never live here."""
 
-from hulu_kernel.types import StrictModel
+from mek_kernel.types import StrictModel
 
 
 class Settings(StrictModel):
@@ -99,7 +99,7 @@ router = APIRouter(prefix="/api/{{name}}/v1", tags=["{{name}}"])
     "{{package}}/adapters/__init__.py": '"""Adapters for ports this block provides. Only if it provides a port."""\n',
     "{{package}}/migrations/README.md": "Alembic branch `{{name}}`: forward-only, expand/contract, row-level security on every new table.\n",
     "{{package}}/demo/README.md": "Demo data that lets this block be shown on its own.\n",
-    "ui/README.md": "React package `@hulu/{{name}}-ui`: the screens of this block. Added with the first screen.\n",
+    "ui/README.md": "React package `@mek/{{name}}-ui`: the screens of this block. Added with the first screen.\n",
     "tests/unit/test_{{name}}_smoke.py": """def test_package_imports():
     import {{package}}  # noqa: F401
 """,
@@ -113,7 +113,7 @@ def test_manifest_is_valid_and_matches_the_block():
 """,
     "tests/security/test_{{name}}_boundaries.py": """from pathlib import Path
 
-from hulu_kernel.registry.boundaries import foreign_imports
+from mek_kernel.registry.boundaries import foreign_imports
 
 BLOCK_DIR = Path(__file__).resolve().parents[2]
 

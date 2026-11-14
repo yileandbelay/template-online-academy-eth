@@ -14,7 +14,7 @@ events_consumed: []
 permissions:
 - contact.message.view
 - contact.message.manage
-settings_model: hulu_contact.settings:Settings
+settings_model: mek_contact.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

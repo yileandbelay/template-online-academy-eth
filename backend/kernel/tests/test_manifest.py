@@ -1,5 +1,5 @@
 import pytest
-from hulu_kernel.registry import BlockManifest, ProductManifest
+from mek_kernel.registry import BlockManifest, ProductManifest
 from pydantic import ValidationError
 
 BLOCK = {

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from hulu_kernel.cli import validate
-from hulu_kernel.registry import load_product_manifest
+from mek_kernel.cli import validate
+from mek_kernel.registry import load_product_manifest
 
 TEMPLATES = Path(__file__).resolve().parents[3] / "templates"
 

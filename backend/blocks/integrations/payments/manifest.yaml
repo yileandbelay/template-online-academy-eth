@@ -24,7 +24,7 @@ permissions:
 - payments.payment.approve
 - payments.payment.record
 - payments.receipt.view
-settings_model: hulu_payments.settings:Settings
+settings_model: mek_payments.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

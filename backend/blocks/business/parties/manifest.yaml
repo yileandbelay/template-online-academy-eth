@@ -18,7 +18,7 @@ permissions:
 - parties.party.view
 - parties.party.edit
 - parties.contact.view
-settings_model: hulu_parties.settings:Settings
+settings_model: mek_parties.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

@@ -21,7 +21,7 @@ products/<name>/
 2. List the blocks; remove those the client does not want (a compliance block stays mandatory for Ethiopia).
 3. Set block settings in the manifest.
 4. Add the theme, pages and content.
-5. Check it: `uv run hulu-kernel validate products/<name>/product.yaml --blocks backend/blocks`.
+5. Check it: `uv run mek-kernel validate products/<name>/product.yaml --blocks backend/blocks`.
    A test also checks every pack and template on every build.
 
 ## Where does a difference belong?

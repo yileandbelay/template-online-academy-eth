@@ -8,20 +8,20 @@ resolution-markers = [
 
 [manifest]
 members = [
-    "hulu-contact",
-    "hulu-contracts",
-    "hulu-exams",
-    "hulu-feedback",
-    "hulu-imports",
-    "hulu-kernel",
-    "hulu-lms",
-    "hulu-new-block",
-    "hulu-notifications",
-    "hulu-parties",
-    "hulu-payments",
-    "hulu-reports",
-    "hulu-tax",
-    "hulu-video",
+    "mek-contact",
+    "mek-contracts",
+    "mek-exams",
+    "mek-feedback",
+    "mek-imports",
+    "mek-kernel",
+    "mek-lms",
+    "mek-new-block",
+    "mek-notifications",
+    "mek-parties",
+    "mek-payments",
+    "mek-reports",
+    "mek-tax",
+    "mek-video",
     "online-academy-ethiopia-template",
 ]
 
@@ -287,218 +287,6 @@ wheels = [
 ]
 
 [[package]]
-name = "hulu-contact"
-version = "0.1.0"
-source = { editable = "backend/blocks/business/contact" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-contracts"
-version = "0.0.1"
-source = { editable = "backend/contracts" }
-dependencies = [
-    { name = "hulu-kernel" },
-    { name = "pydantic" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-kernel", editable = "backend/kernel" },
-    { name = "pydantic", specifier = ">=2.7" },
-]
-
-[[package]]
-name = "hulu-exams"
-version = "0.1.0"
-source = { editable = "backend/blocks/business/exams" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-feedback"
-version = "0.1.0"
-source = { editable = "backend/blocks/business/feedback" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-imports"
-version = "0.1.0"
-source = { editable = "backend/blocks/automation/imports" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-kernel"
-version = "0.0.1"
-source = { editable = "backend/kernel" }
-dependencies = [
-    { name = "fastapi" },
-    { name = "pydantic" },
-    { name = "pyyaml" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.115" },
-    { name = "pydantic", specifier = ">=2.7" },
-    { name = "pyyaml", specifier = ">=6" },
-]
-
-[[package]]
-name = "hulu-lms"
-version = "0.1.0"
-source = { editable = "backend/blocks/business/lms" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-new-block"
-version = "0.0.1"
-source = { editable = "tools/new_block" }
-dependencies = [
-    { name = "hulu-kernel" },
-    { name = "pyyaml" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-kernel", editable = "backend/kernel" },
-    { name = "pyyaml", specifier = ">=6" },
-]
-
-[[package]]
-name = "hulu-notifications"
-version = "0.1.0"
-source = { editable = "backend/blocks/integrations/notifications" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-parties"
-version = "0.1.0"
-source = { editable = "backend/blocks/business/parties" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-payments"
-version = "0.1.0"
-source = { editable = "backend/blocks/integrations/payments" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-reports"
-version = "0.1.0"
-source = { editable = "backend/blocks/automation/reports" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-tax"
-version = "0.1.0"
-source = { editable = "backend/blocks/compliance/tax" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
-name = "hulu-video"
-version = "0.1.0"
-source = { editable = "backend/blocks/integrations/video" }
-dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-]
-
-[[package]]
 name = "idna"
 version = "3.20"
 source = { registry = "https://pypi.org/simple" }
@@ -653,6 +441,218 @@ wheels = [
 ]
 
 [[package]]
+name = "mek-contact"
+version = "0.1.0"
+source = { editable = "backend/blocks/business/contact" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-contracts"
+version = "0.0.1"
+source = { editable = "backend/contracts" }
+dependencies = [
+    { name = "mek-kernel" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-kernel", editable = "backend/kernel" },
+    { name = "pydantic", specifier = ">=2.7" },
+]
+
+[[package]]
+name = "mek-exams"
+version = "0.1.0"
+source = { editable = "backend/blocks/business/exams" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-feedback"
+version = "0.1.0"
+source = { editable = "backend/blocks/business/feedback" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-imports"
+version = "0.1.0"
+source = { editable = "backend/blocks/automation/imports" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-kernel"
+version = "0.0.1"
+source = { editable = "backend/kernel" }
+dependencies = [
+    { name = "fastapi" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.115" },
+    { name = "pydantic", specifier = ">=2.7" },
+    { name = "pyyaml", specifier = ">=6" },
+]
+
+[[package]]
+name = "mek-lms"
+version = "0.1.0"
+source = { editable = "backend/blocks/business/lms" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-new-block"
+version = "0.0.1"
+source = { editable = "tools/new_block" }
+dependencies = [
+    { name = "mek-kernel" },
+    { name = "pyyaml" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-kernel", editable = "backend/kernel" },
+    { name = "pyyaml", specifier = ">=6" },
+]
+
+[[package]]
+name = "mek-notifications"
+version = "0.1.0"
+source = { editable = "backend/blocks/integrations/notifications" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-parties"
+version = "0.1.0"
+source = { editable = "backend/blocks/business/parties" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-payments"
+version = "0.1.0"
+source = { editable = "backend/blocks/integrations/payments" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-reports"
+version = "0.1.0"
+source = { editable = "backend/blocks/automation/reports" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-tax"
+version = "0.1.0"
+source = { editable = "backend/blocks/compliance/tax" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
+name = "mek-video"
+version = "0.1.0"
+source = { editable = "backend/blocks/integrations/video" }
+dependencies = [
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+]
+
+[[package]]
 name = "mypy"
 version = "2.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -720,9 +720,9 @@ name = "online-academy-ethiopia-template"
 version = "0.0.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "hulu-contracts" },
-    { name = "hulu-kernel" },
-    { name = "hulu-new-block" },
+    { name = "mek-contracts" },
+    { name = "mek-kernel" },
+    { name = "mek-new-block" },
 ]
 
 [package.dev-dependencies]
@@ -737,9 +737,9 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "hulu-contracts", editable = "backend/contracts" },
-    { name = "hulu-kernel", editable = "backend/kernel" },
-    { name = "hulu-new-block", editable = "tools/new_block" },
+    { name = "mek-contracts", editable = "backend/contracts" },
+    { name = "mek-kernel", editable = "backend/kernel" },
+    { name = "mek-new-block", editable = "tools/new_block" },
 ]
 
 [package.metadata.requires-dev]

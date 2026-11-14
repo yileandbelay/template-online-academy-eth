@@ -3,9 +3,9 @@
 import importlib
 from pathlib import Path
 
-from hulu_kernel.cli import catalogue
-from hulu_kernel.registry import KERNEL_CAPABILITIES, load_block_manifest, load_product_manifest, resolve
-from hulu_kernel.registry.manifest import ProductManifest
+from mek_kernel.cli import catalogue
+from mek_kernel.registry import KERNEL_CAPABILITIES, load_block_manifest, load_product_manifest, resolve
+from mek_kernel.registry.manifest import ProductManifest
 
 ROOT = Path(__file__).resolve().parents[3]
 BLOCKS = ROOT / "backend" / "blocks"

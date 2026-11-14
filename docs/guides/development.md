@@ -11,10 +11,20 @@ make setup                                  # uv sync --all-packages
 make check                                  # lint, types, import boundaries, tests: what CI runs
 make test                                   # tests only
 make fmt                                    # format and fix imports
-uv run hulu-kernel validate products/mek-academy/product.yaml --blocks backend/blocks
-uv run hulu-kernel catalogue                # regenerate docs/architecture/block-catalogue.md
+uv run mek-kernel validate products/mek-academy/product.yaml --blocks backend/blocks
+uv run mek-kernel catalogue                # regenerate docs/architecture/block-catalogue.md
 docker compose -f docker-compose.dev.yml up -d    # local PostgreSQL when a task needs it
 ```
+
+## Renaming the platform brand
+The brand word is provisional (ADR-022). To change it everywhere (packages, folders, commands, event namespace, prose):
+
+```bash
+uv run python tools/rebrand.py --old mek --new <word> --dry-run    # preview
+uv run python tools/rebrand.py --old mek --new <word>
+uv sync --all-packages && make check
+```
+Do this before the first deployment; stored events carry the namespace.
 
 ## Workflow
 1. The owner gives a **green light** for a task or milestone.

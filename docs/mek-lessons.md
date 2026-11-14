@@ -3,7 +3,7 @@
 Mek Academy is the first online-learning product (Flask, live at www.mek-academy.com). Each lesson from building and running
 it became a rule for this template. When a rule and a convenient shortcut disagree, the rule wins.
 
-| # | What happened on Mek | Rule for the template |
+| # | What happened on Mek Academy | Rule for the template |
 |---|---|---|
 | 1 | The course-visibility model had to be rethought: every course and its lesson titles are shown to everyone, lessons are locked by default, and an admin can make a lesson public. | Access is an explicit **policy**: course state × lesson state (locked, free preview, public) × viewer (guest, student, enrolled, staff), tested as a full matrix. |
 | 2 | Bank transfer and Telebirr deposits with receipt upload and admin approval mattered as much as the gateway. Partial payments and admin-recorded payments appeared in real use. | `PaymentProviderV1` covers online **and** offline channels. The manual adapter is first-class: review queue, partial payments, receipts. |
@@ -14,10 +14,10 @@ it became a rule for this template. When a rule and a convenient shortcut disagr
 | 7 | Much time went on DNS (www and bare domain), certificates, a stray line in the settings file, and a backup script with an unfilled placeholder. | When deployment comes (M6): validate DNS before certificates, a `doctor` command, backup and restore tested in CI and rehearsed. |
 | 8 | A query audit found N+1 patterns. | Query-count budgets per endpoint, tested in CI. |
 | 9 | Teachers manage only their own courses; price, lesson lock and payments are admin-only. | Named permissions with object-level scope from the start. |
-| 10 | Certificates carry a verification code and QR; printed certificates keep pointing at their URL. | Certificate numbers come from the numbering series; public verification URLs are frozen. Mek's `/certificates/<code>` must keep working after migration. |
+| 10 | Certificates carry a verification code and QR; printed certificates keep pointing at their URL. | Certificate numbers come from the numbering series; public verification URLs are frozen. Mek Academy's `/certificates/<code>` must keep working after migration. |
 | 11 | Account export and erasure were added late and touch every feature. | `account.erased@1` is in the contract from day one; every block holding personal data handles it. |
 | 12 | 537 tests made big changes safe; layout checks at phone and desktop widths caught real overflow. | Tests are the specification. Responsive screenshots at 390 px and 1100 px in CI. |
 | 13 | The colour theme was locked after discussion. | Products customise through design tokens and page slots only. |
 | 14 | Work moved fastest in small pull requests with a "green light" before building and "merge" before releasing. | Keep that rhythm. |
 
-Mek's own test suite becomes the first set of scenarios in `qa/scenarios/` (areas and counts are in the plan, appendix D).
+Mek Academy's own test suite becomes the first set of scenarios in `qa/scenarios/` (areas and counts are in the plan, appendix D).
