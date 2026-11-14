@@ -1,0 +1,5 @@
+# Most specific match wins (spec 7.2). One owner for now; split into teams as people join.
+*                    @yileandbelay
+/backend/kernel/     @yileandbelay
+/backend/contracts/  @yileandbelay
+/docs/adr/           @yileandbelay

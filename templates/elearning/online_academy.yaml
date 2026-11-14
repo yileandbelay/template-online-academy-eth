@@ -1,0 +1,32 @@
+# Starting manifest for an online academy (spec 12: templates/<segment>/<type>.yaml).
+# A product pack copies this file and changes it. Blocks marked "planned" do not exist in the library yet.
+product: Online Academy
+segment: elearning
+type: online_academy
+tier: dedicated_hosted
+engine: none
+
+locale:
+  country: ET                 # makes a compliance block mandatory
+  languages: [en, am]
+  default_language: en
+  calendar_defaults: {am: ethiopian, en: gregorian}
+  currency: ETB
+
+blocks:
+  - business.parties@1        # planned: M2
+  - business.lms@1            # planned: M3
+  - business.exams@1          # planned: M4
+  - business.feedback@1       # planned: M4
+  - business.contact@1        # planned: M2
+  - integrations.payments@1   # planned: M2 (adapters: manual, chapa)
+  - integrations.notifications@1  # planned: M2 (adapter: email)
+  - integrations.video@1      # planned: M3 (adapters: bunny, external)
+  - automation.reports@1      # planned: M4
+  - automation.imports@1      # planned: M4
+  - compliance.tax@1          # planned: M2 (minimal)
+
+settings:
+  lms: {discussion: true, announcements: true, certificates: true, lessons_locked_by_default: true, free_preview_allowed: true}
+  payments: {adapters: [manual, chapa], partial_payments: true}
+  admin: {language: en}

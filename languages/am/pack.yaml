@@ -1,0 +1,6 @@
+# Language pack (spec 10). Catalogs are added per block as blocks gain screens.
+code: am
+name: አማርኛ
+default_calendar: ethiopian
+coverage_gate: 100        # percent of strings translated before a release
+reviewers: []             # native-speaker reviewers (to be named)

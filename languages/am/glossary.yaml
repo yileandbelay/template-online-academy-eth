@@ -1,0 +1,9 @@
+# Decided terms. A term is changed only by a pull request that a native speaker has reviewed.
+# Carried over from Mek Academy.
+terms:
+  - en: Browse courses
+    am: ኮርሶችን ይምረጡ
+    note: The public course list. Decided by the product owner.
+  - en: Browse
+    am: ያስሱ
+    note: A bare "Browse" with no object. Never use ይምረጡ for any other "browse" string.
