@@ -1,0 +1,47 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: business.lms
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Courses, sections, lessons, enrolment, access policy, progress, announcements, discussion and the public catalogue.
+provides:
+- CatalogQueryV1
+- AccessQueryV1
+- EnrollmentPortV1
+- ReviewEligibilityQueryV1
+requires:
+- PartyQueryV1
+- PaymentProviderV1
+- NotifierV1
+- VideoProviderV1
+- DocumentsV1
+- NumberingV1
+- FilesV1
+- SearchV1
+- AuditV1
+events_emitted:
+- enrollment.activated@1
+- lesson.completed@1
+- course.completed@1
+- certificate.issued@1
+events_consumed:
+- payment.confirmed@1
+- exam.passed@1
+- review.submitted@1
+- account.erased@1
+permissions:
+- lms.course.view
+- lms.course.edit
+- lms.course.publish
+- lms.lesson.edit
+- lms.lesson.lock
+- lms.enrollment.manage
+- lms.announcement.edit
+- lms.discussion.moderate
+- lms.certificate.view
+settings_model: hulu_lms.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

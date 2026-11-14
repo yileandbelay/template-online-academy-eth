@@ -1,0 +1,21 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: integrations.video
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Upload, play tokens and allowed-domain checks for video hosts (Bunny, VdoCipher, external links).
+provides:
+- VideoProviderV1
+requires:
+- AuditV1
+events_emitted: []
+events_consumed: []
+permissions:
+- video.asset.upload
+- video.asset.view
+settings_model: hulu_video.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

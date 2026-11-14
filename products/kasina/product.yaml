@@ -1,0 +1,34 @@
+# Kasina: the second client, an online academy. Only the name and type are known so far; everything marked TODO is to be
+# confirmed with the owner (docs/products/kasina.md). It starts from the online academy template.
+product: Kasina
+segment: elearning
+type: online_academy
+tier: dedicated_hosted
+engine: none
+
+locale:               # TODO confirm languages, calendar and currency
+  country: ET
+  languages: [en, am]
+  default_language: en
+  calendar_defaults: {am: ethiopian, en: gregorian}
+  currency: ETB
+
+blocks:
+  - business.parties@0
+  - business.lms@0
+  - business.exams@0
+  - business.feedback@0
+  - business.contact@0
+  - integrations.payments@0
+  - integrations.notifications@0
+  - integrations.video@0
+  - automation.reports@0
+  - automation.imports@0
+  - compliance.tax@0
+
+settings: {}          # TODO: payment channels, video host, certificate wording, enrolment policy
+
+theme: theme/
+pages: pages/
+content: content/
+extensions: []

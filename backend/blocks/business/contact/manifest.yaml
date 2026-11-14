@@ -1,0 +1,22 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: business.contact
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Contact form with spam limits and an admin inbox with unread count.
+provides: []
+requires:
+- NotifierV1
+- AuditV1
+events_emitted:
+- message.received@1
+events_consumed: []
+permissions:
+- contact.message.view
+- contact.message.manage
+settings_model: hulu_contact.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

@@ -1,0 +1,24 @@
+# The only file the registry reads (spec 6.1). Status 'proposed': the contract is planned, the code is not built yet.
+id: compliance.tax
+version: 0.1.0
+status: proposed
+steward: platform-leads
+summary: Tax rates and tax lines on fees and receipts; invoice registrar port with a manual adapter until e-invoicing rules
+  exist.
+provides:
+- TaxServiceV1
+- InvoiceRegistrarV1
+requires:
+- SettingsV1
+- AuditV1
+events_emitted: []
+events_consumed: []
+permissions:
+- tax.rate.edit
+- tax.invoice.view
+settings_model: hulu_tax.settings:Settings
+offline: false
+tiers:
+- dedicated_hosted
+- on_premise
+- shared_saas

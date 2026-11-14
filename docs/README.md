@@ -1,10 +1,22 @@
 # Documentation
 
-- `plan/Online_Academy_Ethiopia_Template_Plan_v2.pdf`: the engineering plan (milestones M0 to M8, scope, risks).
-- `adr/`: architecture decision records. Numbers 001 to 014 are in the Hulu architecture specification (internal; add a
-  copy here only when the owner decides). Template decisions continue from 015.
-- Block catalogue: generated from block manifests once blocks exist (M2 onward).
+Start here. Everything is plain Markdown in this repository; pull requests change it like code.
 
-## Second client
-Kasina is the named second client. Its product type (online academy, corporate training or exam preparation) is still to
-be confirmed; it sets the template to polish first and the proof in milestone M8.
+| Read | When |
+|---|---|
+| [Roadmap](roadmap.md) | Where the project is and what comes next (milestones M0 to M8) |
+| [Architecture overview](architecture/overview.md) | How the template is built: layers, blocks, data, events, security |
+| [Conventions](architecture/conventions.md) | Names, versions, events, ports, HTTP API rules |
+| [Block catalogue](architecture/block-catalogue.md) | Every block, what it offers and needs (generated) |
+| [Development guide](guides/development.md) | Set up, commands, workflow, definition of done |
+| [Adding a block](guides/new-block.md) | The generator and the checklist for a new block |
+| [Product packs](guides/product-pack.md) | How a product (Mek Academy, Kasina) is configured on the template |
+| [Localization](guides/localization.md) | Language packs, the Amharic glossary, the Ethiopian calendar |
+| [Testing](guides/testing.md) | Test kinds, fakes, scenarios, budgets |
+| [What Mek Academy taught us](mek-lessons.md) | Lessons from the first product, written as rules |
+| [Mek Academy](products/mek-academy.md) · [Kasina](products/kasina.md) | The two products |
+| [Decisions (ADRs)](adr/README.md) | Why things are the way they are |
+| [Glossary](glossary.md) | Words used in this project |
+| `plan/` | The engineering plan (PDF) |
+
+The Hulu architecture specification is internal and is not copied here. These pages summarise what the template uses of it.
