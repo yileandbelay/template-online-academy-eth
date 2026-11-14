@@ -1,2 +1,2 @@
 def test_package_imports():
-    import hulu_contact  # noqa: F401
+    import mek_contact  # noqa: F401

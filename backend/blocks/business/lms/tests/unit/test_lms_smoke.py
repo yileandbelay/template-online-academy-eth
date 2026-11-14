@@ -1,2 +1,2 @@
 def test_package_imports():
-    import hulu_lms  # noqa: F401
+    import mek_lms  # noqa: F401

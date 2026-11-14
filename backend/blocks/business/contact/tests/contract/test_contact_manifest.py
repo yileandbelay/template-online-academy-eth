@@ -1,7 +1,7 @@
-from hulu_contact.block import manifest
+from mek_contact.block import manifest
 
 
 def test_manifest_is_valid_and_matches_the_block():
     m = manifest()
     assert m.id == "business.contact"
-    assert m.settings_model == "hulu_contact.settings:Settings"
+    assert m.settings_model == "mek_contact.settings:Settings"

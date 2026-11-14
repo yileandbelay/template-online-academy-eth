@@ -1,6 +1,6 @@
 # automation.imports
 
-**Purpose.** Moves existing data in (for example from Mek). Goes through the same services as the screens, never the tables.
+**Purpose.** Moves existing data in (for example from Mek Academy). Goes through the same services as the screens, never the tables.
 
 | | |
 |---|---|
@@ -14,7 +14,7 @@
 - **HTTP API:** `/api/imports/v1/...`
 
 ## Settings
-See `hulu_imports/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
+See `mek_imports/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
 
 ## Permissions
 Declared in `manifest.yaml`; every route must require one (startup fails otherwise).

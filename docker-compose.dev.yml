@@ -4,13 +4,13 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_USER: hulu
-      POSTGRES_PASSWORD: hulu-dev-only
-      POSTGRES_DB: hulu
+      POSTGRES_USER: mek
+      POSTGRES_PASSWORD: mek-dev-only
+      POSTGRES_DB: mek
     ports: ["5432:5432"]
     volumes: ["pgdata:/var/lib/postgresql/data"]
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U hulu"]
+      test: ["CMD-SHELL", "pg_isready -U mek"]
       interval: 5s
       retries: 10
 volumes:

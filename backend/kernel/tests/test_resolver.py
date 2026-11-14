@@ -1,5 +1,5 @@
 import pytest
-from hulu_kernel.registry import BlockManifest, ProductManifest, ResolutionError, resolve
+from mek_kernel.registry import BlockManifest, ProductManifest, ResolutionError, resolve
 
 
 def block(id_, provides=(), requires=(), version="1.0.0", status="stable"):

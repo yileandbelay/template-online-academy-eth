@@ -14,7 +14,7 @@
 - **HTTP API:** `/api/reports/v1/...`
 
 ## Settings
-See `hulu_reports/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
+See `mek_reports/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
 
 ## Permissions
 Declared in `manifest.yaml`; every route must require one (startup fails otherwise).

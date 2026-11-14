@@ -14,7 +14,7 @@
 - **HTTP API:** `/api/video/v1/...`
 
 ## Settings
-See `hulu_video/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
+See `mek_video/settings.py`. Every non-code difference between clients is a bounded setting with a safe default.
 
 ## Permissions
 Declared in `manifest.yaml`; every route must require one (startup fails otherwise).

@@ -1,15 +1,15 @@
 [project]
-name = "hulu-new-block"
+name = "mek-new-block"
 version = "0.0.1"
 description = "Generates a block with the full structure of spec section 7.1 and the checks of section 6.1."
 requires-python = ">=3.12"
-dependencies = ["hulu-kernel", "pyyaml>=6"]
+dependencies = ["mek-kernel", "pyyaml>=6"]
 
 [project.scripts]
 new-block = "new_block.cli:main"
 
 [tool.uv.sources]
-hulu-kernel = { workspace = true }
+mek-kernel = { workspace = true }
 
 [build-system]
 requires = ["hatchling"]

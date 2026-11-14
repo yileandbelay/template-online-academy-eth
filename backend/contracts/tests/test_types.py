@@ -2,8 +2,8 @@ from datetime import UTC, datetime
 from decimal import Decimal
 
 import pytest
-from hulu_contracts.events import EventEnvelope, event_type
-from hulu_contracts.types import DocumentRef, Money, TranslatableText
+from mek_contracts.events import EventEnvelope, event_type
+from mek_contracts.types import DocumentRef, Money, TranslatableText
 from pydantic import ValidationError
 
 
@@ -40,7 +40,7 @@ def test_document_ref():
 
 
 def test_event_type_and_envelope():
-    assert event_type("sale", "completed", 1) == "et.hulu.sale.completed.v1"
+    assert event_type("sale", "completed", 1) == "et.mek.sale.completed.v1"
     e = EventEnvelope.new(
         id="01J",
         entity="enrollment",
@@ -51,13 +51,13 @@ def test_event_type_and_envelope():
         subject_id="7",
         data={"course": "business.lms/course/42"},
     )
-    assert e.type == "et.hulu.enrollment.activated.v1"
+    assert e.type == "et.mek.enrollment.activated.v1"
     assert e.subject == "lms/enrollment/7"
     assert e.time.tzinfo is not None
 
 
 def test_envelope_rejects_local_time_and_bad_type():
-    base = dict(id="1", type="et.hulu.a.b.v1", source="/s", subject="s", dataschema="x", tenant="t", data={})
+    base = dict(id="1", type="et.mek.a.b.v1", source="/s", subject="s", dataschema="x", tenant="t", data={})
     with pytest.raises(ValidationError):
         EventEnvelope(**base, time=datetime(2026, 1, 1))  # naive
     with pytest.raises(ValidationError):

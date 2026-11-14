@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 import pytest
-from hulu_kernel.registry import load_block_manifest
+from mek_kernel.registry import load_block_manifest
 from new_block.cli import generate, main
 
 REPO = Path(__file__).resolve().parents[3]
@@ -17,10 +17,10 @@ def test_generates_full_structure(tmp_path):
         "README.md",
         "CHANGELOG.md",
         "pyproject.toml",
-        "hulu_lms/block.py",
-        "hulu_lms/settings.py",
-        "hulu_lms/api/v1/router.py",
-        "hulu_lms/migrations/README.md",
+        "mek_lms/block.py",
+        "mek_lms/settings.py",
+        "mek_lms/api/v1/router.py",
+        "mek_lms/migrations/README.md",
         "ui/README.md",
         "tests/unit/test_lms_smoke.py",
         "tests/contract/test_lms_manifest.py",

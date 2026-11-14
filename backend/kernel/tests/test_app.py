@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from hulu_kernel.main import create_app
+from mek_kernel.main import create_app
 
 
 def test_health_and_ready():

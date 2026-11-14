@@ -12,23 +12,23 @@ stream, mostly written by Claude and reviewed by the owner; they are re-estimate
 | **M4 Exams, certificates, feedback, reports** | Assessments, certificates with frozen URLs, reviews, reports, imports | 18 to 25 d | Not started |
 | **M5 Web apps** | Public site, learner area, admin console, component library | 45 to 65 d | Not started |
 | **M6 Product layer and operations kit** | Installer, backup and restore, dashboards, security pass | 15 to 25 d | Not started (deployment deferred) |
-| **M7 Mek migration and cutover** | Data migration, password strategy, URL compatibility, parity report | 15 to 20 d | Not started |
+| **M7 Mek Academy migration and cutover** | Data migration, password strategy, URL compatibility, parity report | 15 to 20 d | Not started |
 | **M8 Second product proof** | Kasina on the template with configuration only; measure reuse | 10 to 15 d | Not started |
 
 ## Gates
 - **Gate 0 (end of M0):** spike results and a go or no-go.
 - **Gate 1 (end of M1):** kernel skeleton works end to end locally.
 - **Gate 2 (end of M5):** template v1 usable by a new product.
-- **Gate 3 (end of M7):** parity report; go or no-go on moving Mek.
+- **Gate 3 (end of M7):** parity report; go or no-go on moving Mek Academy.
 
 ## M0 checklist
 - [x] Repository, uv workspace, CI (Ruff, mypy, import-linter, pytest on Python 3.12 and 3.13)
 - [x] Manifests, registry resolver, event envelope, shared types
 - [x] Block generator
 - [x] ADRs 015 to 021
-- [x] All planned blocks created as proposed skeletons; kernel folders; QA folders; product packs for Mek and Kasina
+- [x] All planned blocks created as proposed skeletons; kernel folders; QA folders; product packs for Mek Academy and Kasina
 - [x] Block catalogue generated from manifests; docs
-- [ ] Spike A: Keycloak footprint, Amharic sign-up, invitations, Mek password migration
+- [ ] Spike A: Keycloak footprint, Amharic sign-up, invitations, Mek Academy password migration
 - [ ] Spike B: page weight of catalogue, course and lesson pages (Next.js) on a throttled phone profile
 - [ ] Spike C: PostgreSQL row-level security with `SET LOCAL` through a pooler
 - [ ] Spike D: local Docker Compose footprint (memory) of the full stack

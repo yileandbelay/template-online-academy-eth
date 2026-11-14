@@ -16,7 +16,7 @@ events_consumed: []
 permissions:
 - tax.rate.edit
 - tax.invoice.view
-settings_model: hulu_tax.settings:Settings
+settings_model: mek_tax.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

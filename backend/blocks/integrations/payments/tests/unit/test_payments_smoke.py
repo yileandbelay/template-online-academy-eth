@@ -1,2 +1,2 @@
 def test_package_imports():
-    import hulu_payments  # noqa: F401
+    import mek_payments  # noqa: F401

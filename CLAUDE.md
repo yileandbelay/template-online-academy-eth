@@ -1,6 +1,6 @@
 # Working notes for Claude
 
-This repo is the **Online Academy for Ethiopia template**: reusable blocks for online learning on the Hulu platform
+This repo is the **Online Academy for Ethiopia template**: reusable blocks for online learning on the Mek platform
 architecture. Read `docs/plan/` and `docs/adr/` before changing structure.
 
 ## How we work
@@ -14,9 +14,9 @@ architecture. Read `docs/plan/` and `docs/adr/` before changing structure.
 ## Commands
 `make setup` · `make check` (what CI runs) · `make test` · `make fmt` · `make new-block ID=<family>.<name>`
 
-## Architecture rules (from the Hulu spec)
-- Layers: product pack → blocks → contracts → kernel. Each depends only on layers below. `hulu_kernel` imports no other
-  Hulu package; blocks import only `hulu_kernel` and `hulu_contracts`; blocks never import each other.
+## Architecture rules (from the Mek spec)
+- Layers: product pack → blocks → contracts → kernel. Each depends only on layers below. `mek_kernel` imports no other
+  Mek package; blocks import only `mek_kernel` and `mek_contracts`; blocks never import each other.
 - Blocks own their schema; refer to other blocks' records by `DocumentRef`, never by foreign key.
 - Events go through the outbox in the same transaction; payloads carry ids and amounts, never personal data.
 - Money is `Decimal` with an ISO 4217 currency, never a float. Time is UTC; calendar is chosen at display.

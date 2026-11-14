@@ -6,7 +6,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from hulu_kernel.registry.manifest import BLOCK_ID
+from mek_kernel.registry.manifest import BLOCK_ID
 
 from new_block.scaffold import FILES
 
@@ -26,7 +26,7 @@ def generate(block_id: str, steward: str, blocks_root: Path) -> Path:
         "{{id}}": block_id,
         "{{family}}": family,
         "{{name}}": name,
-        "{{package}}": f"hulu_{name}",
+        "{{package}}": f"mek_{name}",
         "{{steward}}": steward,
         "{{Title}}": name.replace("_", " ").title(),
     }

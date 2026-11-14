@@ -18,7 +18,7 @@ permissions:
 - exams.exam.edit
 - exams.attempt.view
 - exams.result.export
-settings_model: hulu_exams.settings:Settings
+settings_model: mek_exams.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

@@ -1,7 +1,7 @@
-from hulu_lms.block import manifest
+from mek_lms.block import manifest
 
 
 def test_manifest_is_valid_and_matches_the_block():
     m = manifest()
     assert m.id == "business.lms"
-    assert m.settings_model == "hulu_lms.settings:Settings"
+    assert m.settings_model == "mek_lms.settings:Settings"

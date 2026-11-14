@@ -15,7 +15,7 @@ events_consumed: []
 permissions:
 - notifications.template.edit
 - notifications.log.view
-settings_model: hulu_notifications.settings:Settings
+settings_model: mek_notifications.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

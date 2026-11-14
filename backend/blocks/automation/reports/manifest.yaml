@@ -18,7 +18,7 @@ permissions:
 - reports.revenue.view
 - reports.students.view
 - reports.export.run
-settings_model: hulu_reports.settings:Settings
+settings_model: mek_reports.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted

@@ -15,7 +15,7 @@ events_consumed: []
 permissions:
 - imports.job.run
 - imports.job.view
-settings_model: hulu_imports.settings:Settings
+settings_model: mek_imports.settings:Settings
 offline: false
 tiers:
 - dedicated_hosted
