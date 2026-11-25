@@ -13,3 +13,4 @@ for every non-obvious decision (`0000-template.md`).
 | [020](020-hosting-and-data-location.md) | Hosting and data location | Open (deferred) |
 | [021](021-block-granularity.md) | About twelve blocks for v1 | Proposed |
 | [022](022-platform-brand-name.md) | Platform brand name "Mek" is provisional; one-command rebrand | Accepted (provisional) |
+| [023](023-kasina-on-the-template.md) | Kasina Pastry Academy is built on this template | Accepted (direction); conflicts open |

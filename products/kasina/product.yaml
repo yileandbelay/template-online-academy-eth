@@ -1,16 +1,17 @@
-# Kasina: the second client, an online academy. Only the name and type are known so far; everything marked TODO is to be
-# confirmed with the owner (docs/products/kasina.md). It starts from the online academy template.
-product: Kasina
+# Kasina Pastry Academy: the second client, an online academy (ADR-023). The product specification is the pack in
+# docs/products/kasina/ (UI/UX: the KPA-04 PDF, D-08). Values below follow that pack; each one that differs from the
+# template's default cites its discrepancy (docs/products/kasina/DISCREPANCIES.md) and stays open until the owner decides.
+product: Kasina Pastry Academy
 segment: elearning
 type: online_academy
 tier: dedicated_hosted
 engine: none
 
-locale:               # TODO confirm languages, calendar and currency
+locale:
   country: ET
-  languages: [en, am]
-  default_language: en
-  calendar_defaults: {am: ethiopian, en: gregorian}
+  languages: [am, en]
+  default_language: am                                 # K-06 (Amharic default)
+  calendar_defaults: {am: gregorian, en: gregorian}    # K-05 (Gregorian display baseline, R-CORE-05)
   currency: ETB
 
 blocks:
@@ -26,7 +27,11 @@ blocks:
   - automation.imports@0
   - compliance.tax@0
 
-settings: {}          # TODO: payment channels, video host, certificate wording, enrolment policy
+settings:
+  lms: {discussion: false, certificates: true, free_preview_allowed: true}   # K-11 (no live chat or discussion)
+  payments: {adapters: [manual], partial_payments: false}                   # K-11; Chapa is Phase 2 (R-P2)
+  admin: {language: am}                                                     # K-06
+  # Still open (DECISIONS "Still open"): video providers, access-day semantics, session durations, upload limits.
 
 theme: theme/
 pages: pages/

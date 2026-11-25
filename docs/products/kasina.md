@@ -1,7 +1,14 @@
 # Kasina
 
-The second client: an **online academy**. It starts from `templates/elearning/online_academy.yaml`. Only the name and the type
-are known so far; this page collects what is needed to configure its pack (`products/kasina/`).
+The second client: **Kasina Pastry Academy**, an online academy built by Hulu Software Labs PLC on this template (ADR-023).
+It starts from `templates/elearning/online_academy.yaml`; its pack is `products/kasina/`.
+
+**Specification:** [`docs/products/kasina/`](kasina/README.md). For UI/UX the owner's
+[KPA-04 PDF](kasina/source/KPA-04_UI_UX_Design_v1.1.pdf) governs (D-08). Decisions are in
+[DECISIONS.md](kasina/DECISIONS.md); conflicts with this template are K-01 to K-15 in
+[DISCREPANCIES.md](kasina/DISCREPANCIES.md). K-02 (8-week plan vs roadmap M8) must be decided before planning.
+
+Most questions below are now answered by the pack; the open ones are tracked in its DECISIONS "Still open" table.
 
 ## To confirm with the owner
 - Exact product name, domain and whether a www redirect scheme like Mek Academy's is wanted
